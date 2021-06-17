@@ -41,8 +41,8 @@ In each notebook, there are 5 csv files that need to be merged to one dataset, i
 * **release_date.csv:** The release dates of the songs 
 * **features.csv:** The features of the songs
 
-As a result, we have three datasets, **mandopop.csv**, **kpop.csv**, and **vpop.csv**. Afterwards, we need to create a final dataset that combines all these three datasets together. Hence, our final dataset named **songs.csv**.
-Please see below for the final notebook where we merged all three datasets together and exported to a CSV file called **songs.csv**.
+As a result, we have three datasets, **mandopop.csv**, **kpop.csv**, and **vpop.csv**. Afterwards, we need to create a final dataset that combines all these three datasets together. Hence, our final dataset named **songs.csv**, which contains **6350 observations** and **17 variables**. 
+Please see below for the final notebook where we merged all three datasets together and exported to a CSV file called **songs.csv**. 
 
 [Data Wrangling](https://github.com/tvo10/spotify-recommendation-system/blob/main/02_spotify_recommendation_system_data_wrangling.ipynb)
 
@@ -50,40 +50,40 @@ Please see below for the final notebook where we merged all three datasets toget
 There are two notebooks for EDA:
 1) [EDA for All Songs](https://github.com/tvo10/spotify-recommendation-system/blob/main/03_01_spotify_recommendation_system_general_eda.ipynb): This notebook helps us obtain a general sense of our dataset. In other words, we explored all the observations and variables in this notebook.
 2) [EDA for A Specific Language/Music](https://github.com/tvo10/spotify-recommendation-system/blob/main/03_02_spotify_recommendation_system_certain_music_eda.ipynb): This notebook is slightly different as it breaks the dataset down by language/music. For instance, we can understand the top 10 popular songs, top 10 famous artists, and top 10 artists with the most published songs in each language/music. Furthermore, we can compare all the features, such as tempo, valence, loudness, etc. of all three languages together. 
-Please see below for the plots generated in the **EDA for A Specific Language/Music** notebook.
+Please see below for some of the demonstrations in the **EDA for A Specific Language/Music** notebook.
 
 <p>
     <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_songs.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_artists.PNG" />
 </p>
-            
+<br></br>            
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_artists_songs.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_songs.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_artists.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_artists_songs.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_songs.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists.PNG" />
 </p>
-
+<br></br>
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists_songs.PNG" />
 </p>
@@ -92,11 +92,17 @@ For more details:
 [Exploratory Data Analysis](https://github.com/tvo10/spotify-recommendation-system/blob/main/03_02_spotify_recommendation_system_certain_music_eda.ipynb)
 
 
-## 6. Modeling
-We applied the Random Forest algorithm, then tuned the model with GridSearchCV and got almost 0.99 for the accuracy score. The model can be found [here](https://drive.google.com/file/d/1AsWFJ771o4YRJ5F3ALB6iKJAfVoPKQgt/view?usp=sharing).
+## 5. Modeling
+As mentioned in the beginning, I've modified the algorithm from an extraordinary work on [Kaggle](https://www.kaggle.com/vatsalmavani/music-recommendation-system-using-spotify-dataset). Briefly, we have built a music recommendation system using the Spotify API and datasets. How does the system work? To simply put, we applied KMeans algorithm to cluster all the songs in three groups (k=3).
 <p>
-<img src = "https://github.com/tvo10/atrial-fibrillation-detection/blob/main/img/modeling.PNG" />
+  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists_songs.PNG" />
+</p>
+
+We then used the Euclidean distance to measure the distance between each song based on the mean of the features, including `danceability`,`energy`, `key`, `loudness`, `mode`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`. We decide to use the Euclidean Distance over the Cosine Similarity since we believe that the magnitude matters as we want to listen to other songs with the features mean that is closest to our favourite song. For instance, if the mean of our favourite song's valence is 0.4, we do not want to listen to the song with the mean of valence is 0.7. Therefore the Euclidean Distance works best in our case.  
+Our implemented function works like this:
+<p>
+  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/demo.GIF" />
 </p>
 
 For more details: 
-[Modeling](https://github.com/tvo10/atrial-fibrillation-detection/blob/main/04_afib_detection_modeling.ipynb)
+[Modeling](https://github.com/tvo10/spotify-recommendation-system/blob/main/04_spotify_recommendation_system_modeling.ipynb)
