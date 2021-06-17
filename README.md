@@ -55,35 +55,35 @@ Please see below for some of the demonstrations in the **EDA for A Specific Lang
 <p>
     <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_songs.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_artists.PNG" />
 </p>
-<br></br>            
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/mpop_10_artists_songs.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_songs.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_artists.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kpop_10_artists_songs.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_songs.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists.PNG" />
 </p>
-<br></br>
+<hr style="width:40%">
 <p>
   <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists_songs.PNG" />
 </p>
@@ -95,13 +95,13 @@ For more details:
 ## 5. Modeling
 As mentioned in the beginning, I've modified the algorithm from an extraordinary work on [Kaggle](https://www.kaggle.com/vatsalmavani/music-recommendation-system-using-spotify-dataset). Briefly, we have built a music recommendation system using the Spotify API and datasets. How does the system work? To simply put, we applied KMeans algorithm to cluster all the songs in three groups (k=3).
 <p>
-  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/vpop_10_artists_songs.PNG" />
+  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/kmeans.PNG" />
 </p>
 
 We then used the Euclidean distance to measure the distance between each song based on the mean of the features, including `danceability`,`energy`, `key`, `loudness`, `mode`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`. We decide to use the Euclidean Distance over the Cosine Similarity since we believe that the magnitude matters as we want to listen to other songs with the features mean that is closest to our favourite song. For instance, if the mean of our favourite song's valence is 0.4, we do not want to listen to the song with the mean of valence is 0.7. Therefore the Euclidean Distance works best in our case.  
 Our implemented function works like this:
 <p>
-  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/demo.GIF" />
+  <img src="https://github.com/tvo10/spotify-recommendation-system/blob/main/img/demo.gif" />
 </p>
 
 For more details: 
