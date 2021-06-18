@@ -28,6 +28,9 @@ There are three things that you need to do:
 
 Woohoo! You are now able to scrape the data from any playlists on Spotify on your own!! 
 
+For more details:
+[Scrape Data on Spotify](https://github.com/tvo10/spotify-recommendation-system/blob/main/01_spotify_recommendation_system_scrape_data.ipynb)
+
 ## 3. Data Wrangling
 As mentioned above, since we scraped the data from multiple playlists in different languages, we had a separate notebook for each language.
 1) [Mandarin](https://github.com/tvo10/spotify-recommendation-system/blob/main/data_wrangling_by_language/spotify_recommendation_system_data_wrangling_mandopop.ipynb)
@@ -44,6 +47,7 @@ In each notebook, there are 5 csv files that need to be merged to one dataset, i
 As a result, we have three datasets, **mandopop.csv**, **kpop.csv**, and **vpop.csv**. Afterwards, we need to create a final dataset that combines all these three datasets together. Hence, our final dataset named **songs.csv**, which contains **6350 observations** and **17 variables**. 
 Please see below for the final notebook where we merged all three datasets together and exported to a CSV file called **songs.csv**. 
 
+For more details:
 [Data Wrangling](https://github.com/tvo10/spotify-recommendation-system/blob/main/02_spotify_recommendation_system_data_wrangling.ipynb)
 
 ## 4. EDA
